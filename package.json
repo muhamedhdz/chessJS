@@ -1,0 +1,39 @@
+{
+  "name": "chess",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint src/",
+    "coverage": "nyc --temp-dir=./reports/.nyc-output mocha",
+    "mocha-report": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./reports/mocha/test-result.xml",
+    "report": "nyc report --reporter=html --temp-dir=./reports/.nyc-output --report-dir=./reports/coverage",
+    "kill-mutants": "stryker run",
+    "build": "browserify index.js -o dist/chess.js -s 'chess'",
+    "doc": "jsdoc src/ -d docs -t ./node_modules/toast-jsdoc/",
+    "doc-coverage": "doc",
+    "cypress": "cypress open"
+  },
+  "author": "Nicolas Hili <nicolas.hili@univ-grenoble-alpes.fr>",
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "@stryker-mutator/core": "^7.3.0",
+    "@stryker-mutator/mocha-runner": "^7.3.0",
+    "browserify": "^17.0.0",
+    "cypress": "^13.3.3",
+    "doc-coverage": "^1.0.3",
+    "eslint": "^8.52.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jsdoc": "^4.0.2",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "toast-jsdoc": "^1.0.2"
+  },
+  "dependencies": {
+    "mocha-junit-reporter": "^2.2.1"
+  }
+}

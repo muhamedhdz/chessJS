@@ -1,0 +1,34 @@
+stages:
+ - test
+ - build
+
+variables:
+  IMAGE: ${CI_DEPENDENCY_PROXY_2023_S5_R5_DEVOPS_GROUP_IMAGE_PREFIX}/node:hydrogen-alpine3.18
+
+test-job:
+  image: $IMAGE
+  script:
+    - echo "Installation des dépendances"
+    - npm ci
+    - echo "Exécution des tests"
+    - npm run test
+    - npm run mocha-report
+  coverage: '/All files       |     \d+(?:\.\d+)?/'
+  artifacts:
+    when: always
+    paths:
+      - ./reports/mocha/test-result.xml
+    reports:
+      junit: ./reports/mocha/test-result.xml
+
+nyc-report:
+  stage: build
+  image: $IMAGE
+  script:
+    - npm ci
+    - npm run coverage
+    - npm run report
+  artifacts:
+    when: always
+    paths:
+      - ./reports/coverage/

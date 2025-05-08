@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./chess.css" />
+    <title></title>
+  </head>
+  <body>
+    <div id="choose_promotion" class="choosePromotion">
+        <div>
+          <img id="promotionQueen" src=""  alt="Queen"/>
+        </div>
+        <div>
+          <img id="promotionRook" src=""  alt="Rook"/>
+        </div>
+        <div>
+          <img id="promotionBishop" src=""  alt="Bishop"/>
+        </div>
+        <div>
+          <img id="promotionKnight" src=""  alt="Knight"/>
+        </div>
+    </div>
+    <main>
+      <div id="score">
+        <div id="black-score">
+          <div class="score">
+            <p>Score des noirs: <span class="score" id="Color.BLACK">0</span></p>
+          </div>
+          <div class="pieces"></div>
+        </div>
+        <div id="white-score">
+          <div class="score">
+            <p>Score des blancs: <span class="score" id="Color.WHITE">0</span></p>
+          </div>
+          <div class="pieces"></div>
+        </div>
+      </div>
+      <div id="chessboard">
+        <div class="rank">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="rank">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="rank">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="rank">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="rank">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="rank">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="rank">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="rank">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <aside>
+        <section id="turn">
+          <p>Tour de :</p>
+          <figure>
+            <img src="assets/img/rook_white.png" alt="white"/>
+          </figure>
+        </section>
+        <section id="history">
+          <h1>Historique</h1>
+          <div>
+          </div>
+        </section>
+        <section id="control">
+          <input type="reset" id="reset-btn" value="Réinitialiser" />
+        </section>
+      </aside>
+    </main>
+    <script src="../dist/chess.js"></script>
+    <script src="./ui.js"></script>
+  </body>
+</html>
